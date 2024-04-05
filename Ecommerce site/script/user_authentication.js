@@ -64,6 +64,7 @@ function login() {
         alert('User credentials not matching');
     }
 }
+
 function logout() {
     // Remove current user from localStorage
     localStorage.removeItem('current_user');
