@@ -21,11 +21,11 @@
             newProduct.innerHTML = `
             <div class="badge1">${product.offer_discount}% off</div>
             <div class="product-tumb">
-                <img src="${product.image}" alt="${product.name}">
+                <img src="${product.image1}" alt="${product.name}" >
             </div>
             <div class="product-details">
                 <span class="product-catagory">${product.brand}</span>
-                <h4><a href="#">${product.name}</a></h4>
+                <h4><a class="product_name">${product.name}</a></h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                 <div class="product-bottom-details">
                     <div class="product-price"><small>$${product.price}.00</small>$${(product.price * (1 - product.offer_discount / 100)).toFixed(2)}</div>
@@ -78,7 +78,22 @@ document.addEventListener('click', (e) => {
             return; // Stop further execution of the function
         }
     }
+
+    if(clickedElement.classList.contains('product_name')) {  
+
+        
+         // Retrieve the product ID from the dataset of the parent product card
+         let productId = clickedElement.closest('.product-card').dataset.id;
+
+         // Redirect to product_detail.html with the product ID as a query parameter
+        window.location.href = `product_detail.html?productId=${productId}`;
+         e.preventDefault();
+
+         
+    }
 });
+
+
 
 
 const addProductToCart = (productId) => {
@@ -105,28 +120,9 @@ const updateCartInLocalStorage = () => {
     localStorage.setItem('cartItems', JSON.stringify(carts));
 };
 
-  
-
-    // Function to add cart to html
-    const add_cart_to_html = () => {
-        let name = localStorage.getItem('current_user');
-        let totalQuantity = 0;
-        if(name){
-        if (localStorage.getItem('cartItems')) {
-            let carts = JSON.parse(localStorage.getItem('cartItems'));
-            for (let user_email in carts) {
-                for (let productId in carts[user_email].cart) {
-                    totalQuantity += carts[user_email].cart[productId].quantity;
-                }
-            }
-        }
-    }
-        console.log(totalQuantity);
-        cart.innerHTML = `${totalQuantity}`;
-    }
 
 
-
+//category filter
 // Call fetchItems with "camera" category by default
 fetchItems('camera');
 
@@ -218,6 +214,3 @@ function shuffle(array) {
 
     initApp(); // Initialize the app when the page loads
 
-    add_cart_to_html();
-
-    

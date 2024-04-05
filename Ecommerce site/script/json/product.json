@@ -7,7 +7,12 @@
         "offer_discount": 30,
         "category": "camera",
         "price": 100,
-        "image": "image/product/camera.png",
+        "description" : "this is a camera description",
+        "product_rating" : 4.5,
+        "product_color" : "black",
+        "product_availability" : "in stock",
+        "shipping_fee" : "free shipping",
+        "image1": "image/product/camera.png",
         "image2": "image/product/camera.png",
         "image3": "image/product/camera.png",
         "image4": "image/product/camera.png"
@@ -20,7 +25,7 @@
         "category": "gaming",
         "offer_discount": 30,
         "price": 80,
-        "image": "image/product/controller.png",
+        "image1": "image/product/controller.png",
         "image2": "image/product/controller.png",
         "image3": "image/product/controller.png",
         "image4": "image/product/controller.png"
@@ -33,7 +38,7 @@
         "category": "computers",
         "offer_discount": 30,
         "price": 130,
-        "image": "image/product/monitor.png",
+        "image1": "image/product/monitor.png",
         "image2": "image/product/monitor.png",
         "image3": "image/product/monitor.png",
         "image4": "image/product/monitor.png"
@@ -46,7 +51,7 @@
         "category": "computers",
         "offer_discount": 30,
         "price": 60,
-        "image": "image/product/keyboard.png",
+        "image1": "image/product/keyboard.png",
         "image2": "image/product/keyboard.png",
         "image3": "image/product/keyboard.png",
         "image4": "image/product/keyboard.png"
@@ -59,7 +64,7 @@
         "category": "computers",
         "offer_discount": 30,
         "price": 1000,
-        "image": "image/product/laptop.png",
+        "image1": "image/product/laptop.png",
         "image2": "image/product/laptop.png",
         "image3": "image/product/laptop.png",
         "image4": "image/product/laptop.png"
@@ -72,7 +77,7 @@
         "category": "computers",
         "offer_discount": 30,
         "price": 60,
-        "image": "image/product/keyboard.png",
+        "image1": "image/product/keyboard.png",
         "image2": "image/product/keyboard.png",
         "image3": "image/product/keyboard.png",
         "image4": "image/product/keyboard.png"
@@ -85,7 +90,7 @@
         "category": "computers",
         "offer_discount": 30,
         "price": 60,
-        "image": "image/product/keyboard.png",
+        "image1": "image/product/keyboard.png",
         "image2": "image/product/keyboard.png",
         "image3": "image/product/keyboard.png",
         "image4": "image/product/keyboard.png"
@@ -98,7 +103,7 @@
         "category": "computers",
         "offer_discount": 30,
         "price": 60,
-        "image": "image/product/keyboard.png",
+        "image1": "image/product/keyboard.png",
         "image2": "image/product/keyboard.png",
         "image3": "image/product/keyboard.png",
         "image4": "image/product/keyboard.png"

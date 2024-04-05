@@ -71,16 +71,3 @@ function logout() {
     // Redirect to index.html
     window.location.href = 'login.html';
 }
-
-
-/// Check if there is a current user in local storage
-document.addEventListener("DOMContentLoaded", function() {
-    let name = localStorage.getItem('current_user');
-    let signupLink = document.getElementById('signup');
-    let userAuth = document.getElementById('user_auth');
-    if (name) {
-        // Hide all signup links
-        signupLink.style.display = 'none';
-        userAuth.style.display = 'flex'; // Display the user authentication section
-    } 
-});

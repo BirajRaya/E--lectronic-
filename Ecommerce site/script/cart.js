@@ -2,7 +2,7 @@ let carts = JSON.parse(localStorage.getItem('cartItems')) || {};
 
 // Function to update cart items in local storage
 const updateCartInLocalStorage = () => {
-    localStorage.setItem('carts', JSON.stringify(carts));
+    localStorage.setItem('cartItems', JSON.stringify(carts));
 };
 
 // Asynchronous function to add cart items to HTML
@@ -45,7 +45,7 @@ const addCartToHtml = async () => {
                             cartRow.innerHTML = `
                                 <td>
                                     <div class="cart-info">
-                                        <img src="${product.image}" alt="${product.name}">
+                                        <img src="${product.image1}" alt="${product.name}">
                                         <div>
                                             <p class="text h11">${product.name}</p>
                                             <small class="text h11">Price: CAD ${product.price}</small><br>
@@ -90,6 +90,10 @@ const addCartToHtml = async () => {
                 // Update the quantity in the cartItems array
                 if (carts[user_email].cart[productId]) {
                     carts[user_email].cart[productId].quantity = quantity;
+                    console.log(carts[user_email].cart[productId].quantity);
+
+                    // Update the cartItems in local storage
+                    updateCartInLocalStorage();
 
                     // Update the price in the HTML display
                     const priceCell = event.target.parentElement.parentElement.nextElementSibling;
@@ -119,8 +123,7 @@ const addCartToHtml = async () => {
                     discountCell.innerHTML = `CAD ${discount}`;
                     totalAmountCell.innerHTML = `CAD ${subtotal - discount}`;
 
-                    // Update the cartItems in local storage
-                    updateCartInLocalStorage();
+                    
                 }
             }
         });
@@ -137,6 +140,9 @@ const addCartToHtml = async () => {
 
                     // Remove the row from HTML
                     row.remove();
+
+                    // Update the cartItems in local storage
+                    updateCartInLocalStorage();
 
                     // Recalculate subtotal
                     subtotal = 0;
@@ -159,8 +165,7 @@ const addCartToHtml = async () => {
                     discountCell.innerHTML = `CAD ${discount}`;
                     totalAmountCell.innerHTML = `CAD ${subtotal - discount}`;
 
-                    // Update the cartItems in local storage
-                    updateCartInLocalStorage();
+                    
                 }
             }
         });
