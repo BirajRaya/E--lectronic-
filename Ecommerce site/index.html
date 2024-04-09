@@ -12,7 +12,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,64 +20,9 @@
 
     <section class="hero">
         <div class="container d-flex">
-            <div class="header_filter">
-                <div class="title"><strong> Categories</strong></div>
-                <ul id="category-tabs">
-                    <li>
-                        <a href="#" class="main-category">Laptop<i class="fa fa-minus"></i></a>
-                        <ul class="sub-category-tabs tabs1">
-                            <li><a href="#">ABC</a></li>
-                            <li><a href="#">DEF</a></li>
-                            <li><a href="#">GHI</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul id="category-tabs">
-                    <li>
-                        <a href="#" class="main-category">Headphone<i class="fa fa-plus"></i></a>
-                        <ul class="sub-category-tabs">
-                            <li><a href="#">ABC</a></li>
-                            <li><a href="#">DEF</a></li>
-                            <li><a href="#">GHI</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul id="category-tabs">
-                    <li>
-                        <a href="#" class="main-category">Mobile phone<i class="fa fa-plus"></i></a>
-                        <ul class="sub-category-tabs">
-                            <li><a href="#">ABC</a></li>
-                            <li><a href="#">DEF</a></li>
-                            <li><a href="#">GHI</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul id="category-tabs">
-                    <li>
-                        <a href="#" class="main-category">Speaker<i class="fa fa-plus"></i></a>
-                        <ul class="sub-category-tabs">
-                            <li><a href="#">ABC</a></li>
-                            <li><a href="#">DEF</a></li>
-                            <li><a href="#">GHI</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul id="category-tabs">
-                    <li>
-                        <a href="#" class="main-category">Charger<i class="fa fa-plus"></i></a>
-                        <ul class="sub-category-tabs">
-                            <li><a href="#">ABC</a></li>
-                            <li><a href="#">DEF</a></li>
-                            <li><a href="#">GHI</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
             <div class="banner">
                 <img src="./image/banner_2.jpg" alt="banner" class="banner_img">
                 <img src="./image/banner.png" alt="banner" class="banner_img">
-
-
             </div>
         </div>
     </section>
@@ -103,14 +48,6 @@
             <div class="card spring_products">
 
             </div>
-
-
-
-
-            <div class="container_btn1">
-                <a href="#" class="container_btn_a">VIEW ALL PRODUCTS</a>
-            </div>
-
     </section>
 
 
@@ -192,71 +129,19 @@
 
     </section>
 
-    <!---Footer-->
-    <div class="footer">
-        <div class="container">
-            <div class="mainDiv">
+    <div w3-include-html="footer.html"></div>
 
-                <div class="footer-div1">
-                    <h3 class="tag text"> E->lectronic</h3>
-                    <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas placeat
-                        exercitationem eaque quod quos sunt facilis minima magnam minus recusandae autem beatae quaerat
-                        excepturi quam accusamus, in assumenda, rem ab!</p>
-                </div>
-                <div class="footer-div3">
-                    <H3 class="text">Help & other Services</H3>
-                    <ul>
-                        <li><a href="ContactUs.html" class="text">Countact Us</a></li>
-                        <li><a href="" class="text">Return policy</a></li>
-                        <li><a href="FAQ.html" class="text">FAQ</a></li>
-
-                    </ul>
-
-                </div>
-                <div class="footer-div2">
-                    <H3 class="text">Keep In Touch</H3>
-                    <ul>
-                        <li>
-                            <a href="https://www.facebook.com/" class="text"><i class="fa fa-facebook-official"></i>
-                                Facebook</a>
-                        </li>
-
-                        <li><a href="https://twitter.com/login" class="text"><i class="fa fa-twitter"></i> twitter</a>
-                        </li>
-
-                        <li>
-                            <a href="https://www.instagram.com/accounts/login/" class="text"><i
-                                    class="fa fa-instagram"></i> Instagram</a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-
-        </div>
-        <hr class="hr">
-        <p class="copyright text"> &copy; Copyright 2024 - E->lectronic</p>
-
-
-
-
-        <!--main js-->
-        <script src="script/main.js"></script>
-        <script src="script/app.js"></script>
-
-
-        <script src="script/category_plus_minus.js"></script>
-        <script src="script/banner_slider.js"></script>
-        <!-- <script src="script/productslide.js"></script> -->
-        <script src="script/time.js"></script>
-        <script src="script/user_authentication.js"></script>
-
-        <script>
-            window.onload = function () {
-                includeHTML();
-            }
-        </script>
-
+    <!--main js-->
+    <script src="script/app.js"></script>
+    <script>
+        includeHTML();
+    </script>
+    <script src="script/category_plus_minus.js"></script>
+    <script src="script/banner_slider.js"></script>
+    <script src="script/productslide.js"></script>
+    <script src="script/time.js"></script>
+    <script src="script/user_authentication.js"></script>
+    <script src="script/main.js"></script>
 </body>
 
 </html>
