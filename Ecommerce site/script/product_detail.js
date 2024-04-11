@@ -1,5 +1,3 @@
-import { filterProductById } from './product.js'
-
 // Get the URL parameters
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -40,5 +38,8 @@ const addProductToHtml = async () => {
 
 };
 
-// Call the function to add product details to HTML
-addProductToHtml();
+$(document).ready(function() {
+  // Call the function to add product details to HTML
+  addProductToHtml();
+});
+

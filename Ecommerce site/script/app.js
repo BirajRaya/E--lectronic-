@@ -1,6 +1,64 @@
-import { products, filterProducts } from './product.js'
-import { checkPermission } from './user_authentication.js';
-import { createProductCard } from './templates.js';
+let products = [];
+$.ajax({
+    type: 'GET',
+    url: '/script/json/product.json',
+    success: function(data) {
+        products = data;
+    }
+});
+
+
+function filterProducts(category = null, offer = null, id_index = 0) {
+    return products.filter(item =>
+        (category === null ? true : item.category == category)
+        && (offer === null ? true : item.offer == offer)
+        && item.id > id_index
+    );
+}
+
+function filterProductById(id) {
+    let row = products.filter(item => item.id == id);
+    return row.length == 0 ? null : row[0];
+}
+
+function createProductCard(product) {
+    let productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+    productCard.dataset.id = product.id;
+    productCard.innerHTML = `
+    ${product.offer_discount == 0 ? '' : `<div class="badge1">${product.offer_discount}% off</div>`}
+    <div class="product-body">
+        <div class="product-thumb">
+            <img src="${product.image1}" alt="${product.name}" >
+        </div>
+        <div class="product-details">
+            <span class="product-category">${product.brand}</span>
+            <h4><a class="product_name">${product.name}</a></h4>
+            <p>${product.description}</p>
+            
+        </div>
+    </div>
+    <div class="product-footer">
+        <div class="product-bottom-details">
+            ${product.offer_discount == 0 ? `<div class="product-price">$${product.price}.00</div>` :
+            `<div class="product-price"><small>$${product.price}.00</small>$${(product.price * (1 - product.offer_discount / 100)).toFixed(2)}</div>`}
+        </div>
+        <div class="product-links">
+            <a href=""><i class="fa fa-shopping-cart add_cart"></i></a>
+        </div>
+    </div>
+    `;
+
+    return productCard;
+}
+
+function checkPermission() {
+    if (!localStorage.getItem('current_user')) {
+        window.location.href = 'login.html';
+        return false;
+    }
+    return true;
+}
 
 //cart array
 let carts = JSON.parse(localStorage.getItem('cartItems')) || {};

@@ -1,5 +1,42 @@
-import { filterProducts } from "./product.js";
-import { createProductCard } from "./templates.js";
+
+function filterProducts(category = null, offer = null, id_index = 0) {
+    return products.filter(item =>
+        (category === null ? true : item.category == category)
+        && (offer === null ? true : item.offer == offer)
+        && item.id > id_index
+    );
+}
+
+function createProductCard(product) {
+    let productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+    productCard.dataset.id = product.id;
+    productCard.innerHTML = `
+    ${product.offer_discount == 0 ? '' : `<div class="badge1">${product.offer_discount}% off</div>`}
+    <div class="product-body">
+        <div class="product-thumb">
+            <img src="${product.image1}" alt="${product.name}" >
+        </div>
+        <div class="product-details">
+            <span class="product-category">${product.brand}</span>
+            <h4><a class="product_name">${product.name}</a></h4>
+            <p>${product.description}</p>
+            
+        </div>
+    </div>
+    <div class="product-footer">
+        <div class="product-bottom-details">
+            ${product.offer_discount == 0 ? `<div class="product-price">$${product.price}.00</div>` :
+            `<div class="product-price"><small>$${product.price}.00</small>$${(product.price * (1 - product.offer_discount / 100)).toFixed(2)}</div>`}
+        </div>
+        <div class="product-links">
+            <a href=""><i class="fa fa-shopping-cart add_cart"></i></a>
+        </div>
+    </div>
+    `;
+
+    return productCard;
+}
 
 var slideIndex = 0;
 var totalSlides = document.querySelectorAll('.product-card').length;

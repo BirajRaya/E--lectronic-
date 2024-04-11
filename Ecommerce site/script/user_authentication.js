@@ -73,7 +73,7 @@ function logout() {
     window.location.href = 'login.html';
 }
 
-export function checkPermission() {
+function checkPermission() {
     if (!localStorage.getItem('current_user')) {
         window.location.href = 'login.html';
         return false;
