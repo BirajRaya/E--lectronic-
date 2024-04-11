@@ -1,195 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details | Ecommerce Site</title>
-     
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="./css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Ecommerce Site</title>
 
-    <!--Font Awesome - CDN -->
-    <script src="https://kit.fontawesome.com/2ae83b5e46.js" crossorigin="anonymous"></script>
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
 
+  <!--Font Awesome - CDN -->
+  <script src="https://kit.fontawesome.com/2ae83b5e46.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
-      <!--Nav bar-->
+  <!--header-->
+  <header class="header">
+    <nav class="nav">
+      <div class="container nav_container">
+        <a href="" class="nav_logo">E->lectronic</a>
+        <ul class="nav_list">
+          <li class="nav_item"><a href="index.html" class="nav_link">Home</a></li>
+          <li class="nav_item"><a href="products.html" class="nav_link">Products</a></li>
+          <li class="nav_item"><a href="#" class="nav_link">About</a></li>
+          <li class="nav_item"><a href="contact_us.html" class="nav_link">Contact</a></li>
 
-  <nav class="nav">
-  
-    <div class="container nav_container">
-      <a href="" class="nav_logo">E->lectronic</a>
-      <ul class="nav_list">
-        <li class="nav_item"><a href="index.html" class="nav_link">Home</a></li>
-        <li class="nav_item"><a href="#" class="nav_link">Products</a></li>
-        <li class="nav_item"><a href="#" class="nav_link">About</a></li>
-        <li class="nav_item"><a href="contact_us.html" class="nav_link">Contact</a></li>
 
+          <li class="nav_item" id="signup"><a href="login.html" class="nav_link">Login </a></li>
 
-        <li class="nav_item" id="signup" ><a href="login.html" class="nav_link">Login </a></li>
-
-        <div class="cart_div">
-        <a href="cart.html">
-            <img src="image/cart.png" alt="" class="nav_cart cart_image">
-        </a>
-        <div class="span_div">
-          <span class="cart_span" id="cart">0</p>
-        </div>
-        </div>
-        <div class="user_auth" id="user_auth" onclick="logout()">
-          <img src="image/user_icon.png" alt="" class="nav_user"><i class="fa fa-caret-down" aria-hidden="true"></i>
-        </div>
-       
-
-      </ul>
-    
-
-    
+          <li class="cart_div" id="cart_div">
+            <a href="cart.html">
+              <img src="image/cart.png" alt="" class="nav_cart cart_image">
+            </a>
+            <div class="span_div">
+              <span class="cart_span" id="cart">0</span>
+            </div>
+          </li>
+          <li class="user_auth" id="user_auth">
+            <a class="nav_link">Logout</a>
+          </li>
+        </ul>
       </div>
+    </nav>
+  </header>
+  <!-- product detail section -->
 
-    </div>
-    </div>
-  </nav>
-      <!-- product detail section -->
-
-      <div>
-            <div class="product_container">
-                <div class = "card-wrapper">
-                  <div class = "card">
-                    <!-- card left -->
-                    <div class = "product-imgs">
-                      <div class = "img-display">
-                        <div class = "img-showcase">
-                          <img class="product-image">
-                          <img class="product-image">
-                          <img class="product-image">
-                          <img  class="product-image">
-                        </div>
-                      </div>
-                      <div class = "img-select">
-                        <div class = "img-item">
-                          <a data-id = "1">
-                            <img class="thumbnail-image">
-                          </a>
-                        </div>
-                        <div class = "img-item">
-                          <a data-id = "2">
-                            <img class="thumbnail-image" >
-                          </a>
-                        </div>
-                        <div class = "img-item">
-                          <a data-id = "3">
-                            <img class="thumbnail-image">
-                          </a>
-                        </div>
-                        <div class = "img-item" onclick="slideImage()">
-                          <a data-id = "4">
-                            <img  class="thumbnail-image">
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <!-- card right -->
-                    <div class = "product-content">
-                      <h2 class = "product-title">MSI Gaming Laptop</h2>
-                      <a href = "#" class = "product-link">MSI Store</a>
-                      <div class = "product-rating">
-                        <i class = "fas fa-star"></i>
-                        <i class = "fas fa-star"></i>
-                        <i class = "fas fa-star"></i>
-                        <i class = "fas fa-star"></i>
-                        <i class = "fas fa-star-half-alt"></i>
-                        <span>4.7(21)</span>
-                      </div>
-                
-                      <div class = "product-price">
-                        <p class = "last-price">Old Price: <span>$257.00</span></p>
-                        <p class = "new-price">New Price: <span>$249.00 (5%)</span></p>
-                      </div>
-                
-                      <div class = "product-detail">
-                        <h2>about this item: </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.</p>
-                        <ul>
-                          <li>Color: <span>Black</span></li>
-                          <li>Available: <span>in stock</span></li>
-                          <li>Category: <span>Laptop</span></li>
-                          <li>Shipping Area: <span>All over the world</span></li>
-                          <li>Shipping Fee: <span>Free</span></li>
-                        </ul>
-                      </div>
-                
-                      <div class = "purchase-info">
-                        <input type = "number" min = "0" value = "1">
-                        <button type = "button" class = "btn">
-                          Add to Cart <i class = "fas fa-shopping-cart"></i>
-                        </button>
-                       </div>
-                
-              
-                    </div>
-                  </div>
-                </div>
+  <div>
+    <div class="product_container">
+      <div class="card-wrapper">
+        <div class="card p-detail-card">
+          <!-- card left -->
+          <div class="product-imgs">
+            <div class="img-display">
+              <div class="img-showcase">
+                <img class="product-image">
+                <img class="product-image">
+                <img class="product-image">
+                <img class="product-image">
               </div>
-          
-          
-    
-      </div>
-
-
-    
-     <!---Footer-->
-     <div class="footer">
-      <div class="container">
-          <div class="mainDiv">
-
-              <div class="footer-div1">
-                  <h3 class="tag text"> E->lectronic</h3>
-                  <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas placeat exercitationem eaque quod quos sunt facilis minima magnam minus recusandae autem beatae quaerat excepturi quam accusamus, in assumenda, rem ab!</p>
+            </div>
+            <div class="img-select">
+              <div class="img-item">
+                <a data-id="1">
+                  <img class="thumbnail-image">
+                </a>
               </div>
-              <div class="footer-div3">
-                  <H3 class="text">Help & other Services</H3>
-                  <ul>
-                      <li><a href="ContactUs.html" class="text">Countact Us</a></li>
-                      <li><a href="" class="text">Return policy</a></li>
-                      <li><a href="FAQ.html" class="text">FAQ</a></li>
-
-                  </ul>
-
+              <div class="img-item">
+                <a data-id="2">
+                  <img class="thumbnail-image">
+                </a>
               </div>
-              <div class="footer-div2">
-                  <H3 class="text">Keep In Touch</H3>
-                  <ul>
-                      <li>
-                          <a href="https://www.facebook.com/" class="text"><i class="fa fa-facebook-official"></i> Facebook</a></li>
-
-                      <li><a href="https://twitter.com/login" class="text"><i class="fa fa-twitter"></i> twitter</a></li>
-
-                      <li>
-                          <a href="https://www.instagram.com/accounts/login/" class="text"><i class="fa fa-instagram"></i> Instagram</a></li>
-                  </ul>
-
+              <div class="img-item">
+                <a data-id="3">
+                  <img class="thumbnail-image">
+                </a>
               </div>
+              <div class="img-item" onclick="slideImage()">
+                <a data-id="4">
+                  <img class="thumbnail-image">
+                </a>
+              </div>
+            </div>
           </div>
 
+          <!-- card right -->
+          <div class="product-content">
+            <h2 class="product-title"></h2>
+            <a class="product-link"></a>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="p-detail-rating"></span>
+            </div>
+
+            <div class="product-price">
+              <p class="last-price">Old Price: <span>$257.00</span></p>
+              <p class="new-price">New Price: <span>$249.00 (5%)</span></p>
+            </div>
+
+            <div class="product-detail">
+              <h2>About this item: </h2>
+              <p></p>
+              <ul>
+                <li class="p-detail-color">Color: <span>Black</span></li>
+                <li class="p-detail-category">Category: <span>Laptop</span></li>
+                <li class="p-detail-shipping-area">Shipping Area: <span>All over the world</span></li>
+                <li class="p-detail-shipping-fee">Shipping Fee: <span></span></li>
+              </ul>
+            </div>
+
+            <div class="purchase-info">
+              <button type="button" class="btn">
+                Add to Cart <i class="fas fa-shopping-cart"></i>
+              </button>
+            </div>
+
+
+          </div>
+        </div>
       </div>
-      <hr class="hr">
-      <p class="copyright text"> &copy; Copyright 2024 - E->lectronic</p>
+    </div>
 
 
 
-     </div>
-         
-  
+  </div>
+
+
+
+  <!---Footer-->
+  <div class="footer">
+    <div class="container">
+      <div class="mainDiv">
+
+        <div class="footer-div1">
+          <h3 class="tag text"> E->lectronic</h3>
+          <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas placeat exercitationem
+            eaque quod quos sunt facilis minima magnam minus recusandae autem beatae quaerat excepturi quam accusamus,
+            in assumenda, rem ab!</p>
+        </div>
+        <div class="footer-div3">
+          <H3 class="text">Help & other Services</H3>
+          <ul>
+            <li><a href="ContactUs.html" class="text">Countact Us</a></li>
+            <li><a href="" class="text">Return policy</a></li>
+            <li><a href="FAQ.html" class="text">FAQ</a></li>
+
+          </ul>
+
+        </div>
+        <div class="footer-div2">
+          <H3 class="text">Keep In Touch</H3>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/" class="text"><i class="fa fa-facebook-official"></i> Facebook</a>
+            </li>
+
+            <li><a href="https://twitter.com/login" class="text"><i class="fa fa-twitter"></i> twitter</a></li>
+
+            <li>
+              <a href="https://www.instagram.com/accounts/login/" class="text"><i class="fa fa-instagram"></i>
+                Instagram</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+    <hr class="hr">
+    <p class="copyright text"> &copy; Copyright 2024 - E->lectronic</p>
+
+
+
+  </div>
+
+
   <!--main js-->
   <script src="script/main.js"></script>
-  <script src="script/product_detail.js"></script>
+  <script type="module" src="script/product_detail.js"></script>
   <script src="script/image_slider.js"></script>
 
 
 </body>
+
 </html>

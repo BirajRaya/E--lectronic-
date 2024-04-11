@@ -1,39 +1,9 @@
-import { products } from './json/product.js'
+import { products, filterProducts } from './product.js'
 import { checkPermission } from './user_authentication.js';
+import { createProductCard } from './templates.js';
 
 //cart array
 let carts = JSON.parse(localStorage.getItem('cartItems')) || {};
-
-function createProductCard(product) {
-    let productCard = document.createElement('div');
-    productCard.classList.add('product-card');
-    productCard.dataset.id = product.id;
-    productCard.innerHTML = `
-    ${product.offer_discount == 0 ? '' : `<div class="badge1">${product.offer_discount}% off</div>`}
-    <div class="product-body">
-        <div class="product-thumb">
-            <img src="${product.image1}" alt="${product.name}" >
-        </div>
-        <div class="product-details">
-            <span class="product-category">${product.brand}</span>
-            <h4><a class="product_name">${product.name}</a></h4>
-            <p>${product.description}</p>
-            
-        </div>
-    </div>
-    <div class="product-footer">
-        <div class="product-bottom-details">
-            ${product.offer_discount == 0 ? `<div class="product-price">$${product.price}.00</div>` :
-            `<div class="product-price"><small>$${product.price}.00</small>$${(product.price * (1 - product.offer_discount / 100)).toFixed(2)}</div>`}
-        </div>
-        <div class="product-links">
-            <a href=""><i class="fa fa-shopping-cart add_cart"></i></a>
-        </div>
-    </div>
-    `;
-
-    return productCard;
-}
 
 // Function to add data to HTML dynamically
 const addDataToHtml = (data) => {
@@ -83,15 +53,11 @@ const updateCartInLocalStorage = () => {
 
 //fetch using categories
 function fetchItems(category = null, offer = null) {
-    let filteredProducts = products.filter(item =>
-        (category === null ? true : item.category == category)
-        && (offer === null ? true : item.offer == offer)
-    );
+    let filteredProducts = filterProducts(category, offer)
     if (window.location.href.includes('products')) {
         return filteredProducts;
     }
     return filteredProducts.slice(0, 4);
-
 }
 
 // Function to initialize the app
@@ -116,10 +82,11 @@ $(document).ready(function () {
     });
 
     $('body').on('click', '.product-body', function () {
-        let productId = $(this).attr('data-id');
+        let productId = $(this).closest('.product-card').attr('data-id');
 
         // Redirect to product_detail.html with the product ID as a query parameter
-        window.location.href = `product_detail.html?productId=${productId}`;
+        window.open(`product_detail.html?productId=${productId}`, '_blank');
+        // window.location.href = `product_detail.html?productId=${productId}`;
     });
 
     $('body').on('click', '.add_cart', function (e) {

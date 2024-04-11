@@ -1,4 +1,4 @@
-export let products = [
+[
     {
         "id": 1,
         "name": "camera",
@@ -150,6 +150,24 @@ export let products = [
         "offer": "Best_selling",
         "category": "computers",
         "offer_discount": 0,
+        "price": 100,
+        "description" : "this is a keyboard description",
+        "product_rating" : 4.8,
+        "product_color" : "red",
+        "product_availability" : "in stock",
+        "shipping_fee" : "free shipping",
+        "image1": "image/product/keyboard.png",
+        "image2": "image/product/keyboard.png",
+        "image3": "image/product/keyboard.png",
+        "image4": "image/product/keyboard.png"
+    },
+    {
+        "id": 10,
+        "name": "keyboard",
+        "brand": "MSI",
+        "offer": "Spring",
+        "category": "computers",
+        "offer_discount": 20,
         "price": 60,
         "description" : "this is a keyboard description",
         "product_rating" : 4.8,

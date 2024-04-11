@@ -1,4 +1,4 @@
-import { products } from './json/product.js'
+import { products } from './product.js'
 
 if (!localStorage.getItem('current_user')) {
     window.location.href = 'login.html';

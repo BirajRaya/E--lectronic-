@@ -58,7 +58,7 @@
 
     <!--offer section-->
     <section class="section">
-        <div class="container">
+        <div class="container" data-offer="Spring">
             <div class="section_category">
                 <span class="icon icon-square red" style="margin-right: 10px;"></span>
                 Today's
@@ -69,8 +69,8 @@
                     <p id="time"></p>
                 </div>
                 <div>
-                    <a id="prev" class="container_btn_a"><i class="fa fa-arrow-circle-o-left"></i></a>
-                    <a id="next" class="container_btn_a"><i class="fa fa-arrow-circle-o-right"></i></a>
+                    <a class="container_btn_a prev"><i class="fa fa-arrow-circle-o-left"></i></a>
+                    <a class="container_btn_a next"><i class="fa fa-arrow-circle-o-right"></i></a>
                 </div>
             </div>
             <!--product card -->
@@ -92,7 +92,7 @@
                 <h3 class="section_title">Browse by Category</h3>
             </div>
             <div class="categories ">
-                <div class="category" data-category="camera">
+                <div class="category active" data-category="camera">
                     <img src="./image/icons/camera.png" alt="" class="category_icon" />
                     <p class="category_name">Cameras</p>
                 </div>
@@ -131,7 +131,7 @@
 
     <!--Best selling section-->
     <section class="section">
-        <div class="container">
+        <div class="container" data-offer="Best_selling">
             <div class="section_category">
                 <span class="icon icon-square red" style="margin-right: 10px;"></span>
                 This month
@@ -141,8 +141,8 @@
                     <h3 class="section_title">Best selling product</h3>
                 </div>
                 <div>
-                    <a id="prev" class="container_btn_a"><i class="fa fa-arrow-circle-o-left"></i></a>
-                    <a id="next" class="container_btn_a"><i class="fa fa-arrow-circle-o-right"></i></a>
+                    <a class="container_btn_a prev"><i class="fa fa-arrow-circle-o-left"></i></a>
+                    <a class="container_btn_a next"><i class="fa fa-arrow-circle-o-right"></i></a>
                 </div>
             </div>
 
@@ -203,11 +203,11 @@
         <p class="copyright text"> &copy; Copyright 2024 - E->lectronics</p>
     </div>
 
-    <script type="module" src="script/json/product.js"></script>
+    <script type="module" src="script/templates.js"></script>
     <script type="module" src="script/app.js"></script>
     <script src="script/main.js"></script>
     <script src="script/banner_slider.js"></script>
-    <script src="script/productslide.js"></script>
+    <script type="module" src="script/productslide.js"></script>
     <script src="script/time.js"></script>
     <script type="module" src="script/user_authentication.js"></script>
 </body>
