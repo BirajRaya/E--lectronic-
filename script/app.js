@@ -1,7 +1,7 @@
 let products = [];
 $.ajax({
   type: "GET",
-  url: "/Ecommerce site/script/json/product.json",
+  url: "/script/json/product.json",
   success: function (data) {
     products = data;
   },
