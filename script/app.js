@@ -1,11 +1,4 @@
 let products = [];
-$.ajax({
-  type: "GET",
-  url: "/script/json/product.json",
-  success: function (data) {
-    products = data;
-  },
-});
 
 function filterProducts(category = null, offer = null, id_index = 0) {
   return products.filter(
@@ -137,7 +130,14 @@ const initApp = () => {
 };
 
 $(document).ready(function () {
-  initApp(); // Initialize the app when the page loads
+  $.ajax({
+    type: "GET",
+    url: "/script/json/product.json",
+    success: function (data) {
+      products = data;
+      initApp(); // Initialize the app when the page loads
+    },
+  });
 
   $("body").on("click", ".categories .category", function () {
     let category = $(this).attr("data-category");
