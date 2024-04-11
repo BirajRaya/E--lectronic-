@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME | Ecommerce Site</title>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--header-->
+    <header class="header">
+        <nav class="nav">
+            <div class="container nav_container">
+                <a href="" class="nav_logo">E->lectronic</a>
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="index.html" class="nav_link">Home</a></li>
+                    <li class="nav_item"><a href="products.html" class="nav_link">Products</a></li>
+                    <li class="nav_item"><a href="#" class="nav_link">About</a></li>
+                    <li class="nav_item"><a href="contact_us.html" class="nav_link">Contact</a></li>
+
+
+                    <li class="nav_item" id="signup"><a href="login.html" class="nav_link">Login </a></li>
+
+                    <li class="cart_div" id="cart_div">
+                        <a href="cart.html">
+                            <img src="image/cart.png" alt="" class="nav_cart cart_image">
+                        </a>
+                        <div class="span_div">
+                            <span class="cart_span" id="cart">0</span>
+                        </div>
+                    </li>
+                    <li class="user_auth" id="user_auth" onclick="logout()">
+                        <a class="nav_link">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container d-flex">
+            <div class="banner">
+                <img src="./image/banner_2.jpg" alt="banner" class="banner_img">
+                <img src="./image/banner.png" alt="banner" class="banner_img">
+            </div>
+        </div>
+    </section>
+
+    <!--Category-->
+
+    <section class="section">
+        <div class="container">
+            <div class="section_category">
+                <span class="icon icon-square red" style="margin-right: 10px;"></span>
+                Products
+            </div>
+            <div class="section_header">
+                <h3 class="section_title">All Products</h3>
+            </div>
+            <div class="categories ">
+                <div class="category" data-category="camera">
+                    <img src="./image/icons/camera.png" alt="" class="category_icon" />
+                    <p class="category_name">Cameras</p>
+                </div>
+                <div class="category" data-category="computers">
+                    <img src="./image/icons/computer.png" alt="" class="category_icon" />
+                    <p class="category_name">Computers</p>
+                </div>
+                <div class="category" data-category="gaming">
+                    <img src="./image/icons/gaming.png" alt="" class="category_icon" />
+                    <p class="category_name">Gaming</p>
+                </div>
+                <div class="category" data-category="headphones">
+                    <img src="./image/icons/headphone.png" alt="" class="category_icon" />
+                    <p class="category_name">Headphones</p>
+                </div>
+                <div class="category" data-category="phones">
+                    <img src="./image/icons/phone.png" alt="" class="category_icon" />
+                    <p class="category_name">Phones</p>
+                </div>
+                <div class="category" data-category="watches">
+                    <img src="./image/icons/watch.png" alt="" class="category_icon" />
+                    <p class="category_name">Watches</p>
+                </div>
+            </div>
+
+            <div class="card products category_display">
+
+
+            </div>
+
+
+    </section>
+
+    <!---Footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="mainDiv">
+
+                <div class="footer-div1">
+                    <h3 class="tag text"> E->lectronic</h3>
+                    <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas placeat
+                        exercitationem eaque quod quos sunt facilis minima magnam minus recusandae autem beatae quaerat
+                        excepturi quam accusamus, in assumenda, rem ab!</p>
+                </div>
+                <div class="footer-div3">
+                    <H3 class="text">Help & other Services</H3>
+                    <ul>
+                        <li><a href="ContactUs.html" class="text">Countact Us</a></li>
+                        <li><a href="" class="text">Return policy</a></li>
+                        <li><a href="FAQ.html" class="text">FAQ</a></li>
+
+                    </ul>
+
+                </div>
+                <div class="footer-div2">
+                    <H3 class="text">Keep In Touch</H3>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/" class="text"><i class="fa fa-facebook-official"></i>
+                                Facebook</a>
+                        </li>
+
+                        <li><a href="https://twitter.com/login" class="text"><i class="fa fa-twitter"></i> twitter</a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.instagram.com/accounts/login/" class="text"><i
+                                    class="fa fa-instagram"></i> Instagram</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        <hr class="hr">
+        <p class="copyright text"> &copy; Copyright 2024 - E->lectronics</p>
+    </div>
+
+    <script type="module" src="script/app.js"></script>
+    <script src="script/main.js"></script>
+    <script src="script/banner_slider.js"></script>
+    <script src="script/user_authentication.js"></script>
+</body>
+
+</html>

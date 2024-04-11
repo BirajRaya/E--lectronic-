@@ -33,10 +33,6 @@ function prevSlide() {
     showSlides($(this));
 }
 
-window.onload = function() {
-    showSlides();
-}
-
 document.getElementById("next").addEventListener("click", nextSlide);
 document.getElementById("prev").addEventListener("click", prevSlide);
 

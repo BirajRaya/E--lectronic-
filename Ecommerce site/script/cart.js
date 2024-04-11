@@ -1,3 +1,9 @@
+import { products } from './json/product.js'
+
+if (!localStorage.getItem('current_user')) {
+    window.location.href = 'login.html';
+}
+
 let carts = JSON.parse(localStorage.getItem('cartItems')) || {};
 
 // Function to update cart items in local storage
@@ -16,10 +22,6 @@ const addCartToHtml = async () => {
     let subtotal = 0;
 
     try {
-        // Load product data from the JSON file
-        const response = await fetch('script/json/product.json');
-        const products = await response.json();
-
         let user_email = localStorage.getItem('user_email');
         
         // Load cart items from local storage based on user's email

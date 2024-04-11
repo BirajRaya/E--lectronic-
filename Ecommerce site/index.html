@@ -12,11 +12,40 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div w3-include-html="header.html"></div>
+    <!--header-->
+    <header class="header">
+        <nav class="nav">
+            <div class="container nav_container">
+                <a href="" class="nav_logo">E->lectronic</a>
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="index.html" class="nav_link">Home</a></li>
+                    <li class="nav_item"><a href="products.html" class="nav_link">Products</a></li>
+                    <li class="nav_item"><a href="#" class="nav_link">About</a></li>
+                    <li class="nav_item"><a href="contact_us.html" class="nav_link">Contact</a></li>
+
+
+                    <li class="nav_item" id="signup"><a href="login.html" class="nav_link">Login </a></li>
+
+                    <li class="cart_div" id="cart_div">
+                        <a href="cart.html">
+                            <img src="image/cart.png" alt="" class="nav_cart cart_image">
+                        </a>
+                        <div class="span_div">
+                            <span class="cart_span" id="cart">0</span>
+                        </div>
+                    </li>
+                    <li class="user_auth" id="user_auth" >
+                        <a class="nav_link">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <section class="hero">
         <div class="container d-flex">
@@ -45,7 +74,7 @@
                 </div>
             </div>
             <!--product card -->
-            <div class="card spring_products">
+            <div class="card products spring_products">
 
             </div>
     </section>
@@ -63,38 +92,40 @@
                 <h3 class="section_title">Browse by Category</h3>
             </div>
             <div class="categories ">
-                <div class="category" data-category="camera" onclick="fetchItems('camera')">
+                <div class="category" data-category="camera">
                     <img src="./image/icons/camera.png" alt="" class="category_icon" />
                     <p class="category_name">Cameras</p>
                 </div>
-                <div class="category" data-category="computers" onclick="fetchItems('computers')">
+                <div class="category" data-category="computers">
                     <img src="./image/icons/computer.png" alt="" class="category_icon" />
                     <p class="category_name">Computers</p>
                 </div>
-                <div class="category">
+                <div class="category" data-category="gaming">
                     <img src="./image/icons/gaming.png" alt="" class="category_icon" />
                     <p class="category_name">Gaming</p>
                 </div>
-                <div class="category">
+                <div class="category" data-category="headphones">
                     <img src="./image/icons/headphone.png" alt="" class="category_icon" />
                     <p class="category_name">Headphones</p>
                 </div>
-                <div class="category">
+                <div class="category" data-category="phones">
                     <img src="./image/icons/phone.png" alt="" class="category_icon" />
                     <p class="category_name">Phones</p>
                 </div>
-                <div class="category">
+                <div class="category" data-category="watches">
                     <img src="./image/icons/watch.png" alt="" class="category_icon" />
                     <p class="category_name">Watches</p>
                 </div>
             </div>
 
-            <div class="card category_display">
+            <div class="card products category_display">
 
 
             </div>
 
-
+            <div class="container_btn1">
+                <a href="products.html" class="container_btn_a" target="_blank">VIEW ALL PRODUCTS</a>
+            </div>
     </section>
 
 
@@ -116,32 +147,69 @@
             </div>
 
             <!--product card -->
-            <div class="card best_selling_products">
+            <div class="card products best_selling_products">
 
 
 
             </div>
 
         </div>
-        <div class="container_btn1">
-            <a href="#" class="container_btn_a">VIEW ALL PRODUCTS</a>
-        </div>
 
     </section>
 
-    <div w3-include-html="footer.html"></div>
+    <!---Footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="mainDiv">
 
-    <!--main js-->
-    <script src="script/app.js"></script>
-    <script>
-        includeHTML();
-    </script>
-    <script src="script/category_plus_minus.js"></script>
+                <div class="footer-div1">
+                    <h3 class="tag text"> E->lectronic</h3>
+                    <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas placeat
+                        exercitationem eaque quod quos sunt facilis minima magnam minus recusandae autem beatae quaerat
+                        excepturi quam accusamus, in assumenda, rem ab!</p>
+                </div>
+                <div class="footer-div3">
+                    <H3 class="text">Help & other Services</H3>
+                    <ul>
+                        <li><a href="ContactUs.html" class="text">Countact Us</a></li>
+                        <li><a href="" class="text">Return policy</a></li>
+                        <li><a href="FAQ.html" class="text">FAQ</a></li>
+
+                    </ul>
+
+                </div>
+                <div class="footer-div2">
+                    <H3 class="text">Keep In Touch</H3>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/" class="text"><i class="fa fa-facebook-official"></i>
+                                Facebook</a>
+                        </li>
+
+                        <li><a href="https://twitter.com/login" class="text"><i class="fa fa-twitter"></i> twitter</a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.instagram.com/accounts/login/" class="text"><i
+                                    class="fa fa-instagram"></i> Instagram</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        <hr class="hr">
+        <p class="copyright text"> &copy; Copyright 2024 - E->lectronics</p>
+    </div>
+
+    <script type="module" src="script/json/product.js"></script>
+    <script type="module" src="script/app.js"></script>
+    <script src="script/main.js"></script>
     <script src="script/banner_slider.js"></script>
     <script src="script/productslide.js"></script>
     <script src="script/time.js"></script>
-    <script src="script/user_authentication.js"></script>
-    <script src="script/main.js"></script>
+    <script type="module" src="script/user_authentication.js"></script>
 </body>
 
 </html>

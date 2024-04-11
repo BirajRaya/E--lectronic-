@@ -72,3 +72,17 @@ function logout() {
     // Redirect to index.html
     window.location.href = 'login.html';
 }
+
+export function checkPermission() {
+    if (!localStorage.getItem('current_user')) {
+        window.location.href = 'login.html';
+        return false;
+    }
+    return true;
+}
+
+$(document).ready(function() {
+    $('body').on('click', '.register', () => register());
+    $('body').on('click', '.login', () => login());
+    $('body').on('click', '.user_auth', () => logout());
+});
