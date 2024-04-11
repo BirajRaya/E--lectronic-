@@ -9,18 +9,6 @@ function filterProducts(category = null, offer = null, id_index = 0) {
   );
 }
 
-function filterProductById(id) {
-  $.ajax({
-    type: "GET",
-    url: "/script/json/product.json",
-    success: function (data) {
-      products = data;
-      let row = products.filter((item) => item.id == id);
-      return row.length == 0 ? null : row[0];
-    },
-  });
-}
-
 function createProductCard(product) {
   let productCard = document.createElement("div");
   productCard.classList.add("product-card");
