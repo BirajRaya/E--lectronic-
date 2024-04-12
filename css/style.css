@@ -720,6 +720,10 @@ img {
   color: #256eff;
 }
 
+.product-detail {
+  margin-top: 10px;
+}
+
 .product-detail h2 {
   text-transform: capitalize;
   color: #12263a;
@@ -820,18 +824,17 @@ img {
 }
 
 .contentDiv {
-  display: block;
-  height: 700px;
+  display: flex;
+  align-items: center;
+  height: 80vh;
   width: 100%;
 }
 
 #contact {
-  position: absolute;
-  left: 50%;
-  top: 60%;
-  transform: translate(-50%, -50%);
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .social {

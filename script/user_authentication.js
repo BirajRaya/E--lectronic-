@@ -31,6 +31,7 @@ function register() {
         // Store updated userRecord in localStorage
         localStorage.setItem('users', JSON.stringify(userRecord));
         alert('User registered successfully');
+        window.location.href = "login.html";
     }
 }
 
@@ -83,6 +84,5 @@ function checkPermission() {
 
 $(document).ready(function() {
     $('body').on('click', '.register', () => register());
-    $('body').on('click', '.login', () => login());
     $('body').on('click', '.user_auth', () => logout());
 });

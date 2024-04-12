@@ -32,6 +32,37 @@ const addProductToHtml = async () => {
 
           $("body").find(".product-title").html(product.name);
           $("body").find(".product-link").html(product.category);
+          $("body").find(".p-detail-rating").html(product.product_rating);
+          $("body").find(".p-detail-description").html(product.description);
+          $("body").find(".p-detail-color span").html(product.product_color);
+          $("body").find(".p-detail-shipping-fee span").html(product.shipping_fee);
+
+          if (product.offer_discount > 0) {
+            $("body").find(".product-price").html(`
+            <p class="last-price">Old Price: <span>$${product.price}</span></p>
+            <p class="new-price">New Price: <span>$${product.price - (product.price * (product.offer_discount / 100))} (${product.offer_discount}% off)</span></p>
+            `);
+          }
+          else {
+            $("body").find(".product-price").html(`
+            <p class="new-price">Price: <span>$${product.price}</span></p>
+            `);
+          }
+
+          for (let i=0; i < Math.floor(product.product_rating); i++) {
+            $("body").find(".product-rating").append('<i class="fas fa-star"></i>');
+          }
+
+          if (product.product_rating > Math.floor(product.product_rating)) {
+            $("body").find(".product-rating").append('<i class="fas fa-star-half-alt"></i>');
+          }
+
+          var totalStars = $("body").find(".product-rating").find('i').length;
+
+          for (let i = 0; i < 5 - totalStars; i++) {
+            $("body").find(".product-rating").append('<i class="far fa-star"></i>')
+          }
+
         } else {
           $(".p-detail-card").html(
             "<h2>Oops! We were unavailable to find the product you were looking for.</h2>"
@@ -47,4 +78,13 @@ const addProductToHtml = async () => {
 $(document).ready(function () {
   // Call the function to add product details to HTML
   addProductToHtml();
+
+  $("body").on("click", ".btn-add-cart", function (e) {
+    if (!checkPermission()) {
+      e.preventDefault();
+      return;
+    }
+
+    addProductToCart(productId);
+  });
 });

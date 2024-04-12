@@ -16,17 +16,25 @@ function checkCurrentUser() {
 // Function to add cart items to HTML
 function addCartToHTML() {
     let totalQuantity = 0;
+    let user_email = localStorage.getItem("user_email");
+
     if (localStorage.getItem('cartItems')) {
         let carts = JSON.parse(localStorage.getItem('cartItems'));
-        for (let user_email in carts) {
-            for (let productId in carts[user_email].cart) {
-                totalQuantity += carts[user_email].cart[productId].quantity;
-            }
-        }
+
+        let cartItemsCount = 0;
+
+        $(carts[user_email].cart).each((index, data) => {
+            let keys = Object.keys(data);
+
+            keys.forEach(function (key) {
+                cartItemsCount += data[key].quantity;
+            });
+        })
+
+        $("body")
+            .find("span.cart_span")
+            .text(cartItemsCount);
     }
-    console.log(totalQuantity);
-    // Assuming you have an element with id 'cart' to display the cart count
-    document.getElementById('cart').innerHTML = `${totalQuantity}`;
 };
 
 checkCurrentUser();

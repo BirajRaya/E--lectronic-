@@ -14,10 +14,9 @@ function createProductCard(product) {
   productCard.classList.add("product-card");
   productCard.dataset.id = product.id;
   productCard.innerHTML = `
-    ${
-      product.offer_discount == 0
-        ? ""
-        : `<div class="badge1">${product.offer_discount}% off</div>`
+    ${product.offer_discount == 0
+      ? ""
+      : `<div class="badge1">${product.offer_discount}% off</div>`
     }
     <div class="product-body">
         <div class="product-thumb">
@@ -32,16 +31,14 @@ function createProductCard(product) {
     </div>
     <div class="product-footer">
         <div class="product-bottom-details">
-            ${
-              product.offer_discount == 0
-                ? `<div class="product-price">$${product.price}.00</div>`
-                : `<div class="product-price"><small>$${
-                    product.price
-                  }.00</small>$${(
-                    product.price *
-                    (1 - product.offer_discount / 100)
-                  ).toFixed(2)}</div>`
-            }
+            ${product.offer_discount == 0
+      ? `<div class="product-price">$${product.price}.00</div>`
+      : `<div class="product-price"><small>$${product.price
+      }.00</small>$${(
+        product.price *
+        (1 - product.offer_discount / 100)
+      ).toFixed(2)}</div>`
+    }
         </div>
         <div class="product-links">
             <a href=""><i class="fa fa-shopping-cart add_cart"></i></a>
@@ -74,7 +71,7 @@ const addDataToHtml = (data) => {
       } else if ($(element).hasClass("category_display")) {
         filteredData = fetchItems("camera", null);
       } else if ($(element).hasClass("best_selling_products")) {
-        filteredData = fetchItems(null, "Best_selling");
+        filteredData = fetchItems(null, "Best selling");
       }
 
       $(filteredData).each((i, item) => {
@@ -99,15 +96,28 @@ const addProductToCart = (productId) => {
     carts[user_email].cart[productId].quantity += 1;
   }
 
-  $("body")
-    .find("span.cart_span")
-    .html(carts[user_email].length + 1);
+  alert('Item added in cart successfully.');
 
   updateCartInLocalStorage(); // Call function to update cart items in local storage
 };
 // Function to update cart items in local storage
 const updateCartInLocalStorage = () => {
+  let user_email = localStorage.getItem("user_email");
   localStorage.setItem("cartItems", JSON.stringify(carts));
+
+  let cartItemsCount = 0;
+
+  $(carts[user_email].cart).each((index, data) => {
+    let keys = Object.keys(data);
+
+    keys.forEach(function(key) {
+      cartItemsCount += data[key].quantity;
+    });
+  })
+
+  $("body")
+    .find("span.cart_span")
+    .text(cartItemsCount);
 };
 
 //fetch using categories
@@ -151,8 +161,8 @@ $(document).ready(function () {
     let productId = $(this).closest(".product-card").attr("data-id");
 
     // Redirect to product_detail.html with the product ID as a query parameter
-    window.open(`product_detail.html?productId=${productId}`, "_blank");
-    // window.location.href = `product_detail.html?productId=${productId}`;
+    // window.open(`product_detail.html?productId=${productId}`, "_blank");
+    window.location.href = `product_detail.html?productId=${productId}`;
   });
 
   $("body").on("click", ".add_cart", function (e) {
@@ -160,6 +170,8 @@ $(document).ready(function () {
       e.preventDefault();
       return;
     }
+
+    e.preventDefault();
 
     let productId = $(this).closest(".product-card").attr("data-id");
     addProductToCart(productId);

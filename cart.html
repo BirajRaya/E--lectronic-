@@ -11,6 +11,8 @@
 
     <!--Font Awesome - CDN -->
     <script src="https://kit.fontawesome.com/2ae83b5e46.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -48,42 +50,28 @@
     <div class="small-container cart">
         <table class="table">
             <tr>
-                <th class="text">products</th>
+                <th class="text">Products</th>
                 <th class="text">Quantity</th>
                 <th class="text">Totalprice</th>
             </tr>
-            <!-- <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="image/item-1.png" alt="controller">
-                        <div>
-                            <p class="text h11">playstation controller</p>
-                            <small class="text h11">Price: CAD 1,000</small><br>
-                            <a href="#0" class="cd-popup-trigger text">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><label><input type="number" value="1" class="text"></label></td>
-                <td class="text h11">CAD 1,000</td>
-            </tr> -->
-
+            
         </table>
         <div class="total">
             <table>
                 <tr>
                     <td class="text h11">Subtotal</td>
-                    <td class="text Subtotal"> 4,000</td>
+                    <td class="text Subtotal"></td>
                 </tr>
                 <tr>
-                    <td class="text discount_percent">Discount(10%)</td>
-                    <td class="text discount">400</td>
+                    <td class="text tax_percent">HST (13%)</td>
+                    <td class="text tax"></td>
                 </tr>
                 <tr>
                     <td class="text h11">Total</td>
-                    <td class="text total_amount">3,600</td>
+                    <td class="text total_amount"></td>
                 </tr>
                 <tr>
-                    <td><a href="checkout.html"><button class="checkout" class="text">PROCEED TO CHECKOUT</button></td>
+                    <td><button class="checkout btn-checkout">PROCEED TO CHECKOUT</button></td>
                     </a>
                 </tr>
 
@@ -107,12 +95,9 @@
                         excepturi quam accusamus, in assumenda, rem ab!</p>
                 </div>
                 <div class="footer-div3">
-                    <H3 class="text">Help & other Services</H3>
+                    <h3 class="text">Help & other Services</h3>
                     <ul>
-                        <li><a href="ContactUs.html" class="text">Countact Us</a></li>
-                        <li><a href="" class="text">Return policy</a></li>
-                        <li><a href="FAQ.html" class="text">FAQ</a></li>
-
+                        <li><a href="contact_us.html" class="text">Contact Us</a></li>
                     </ul>
 
                 </div>
@@ -145,7 +130,9 @@
     </div>
 
     <!--main js-->
+    <script src="script/app.js"></script>
     <script src="script/main.js"></script>
+    <script src="script/user_authentication.js"></script>
     <script src="script/cart.js"></script>
 
 </body>
