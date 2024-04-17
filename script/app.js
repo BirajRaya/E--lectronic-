@@ -57,6 +57,22 @@ function checkPermission() {
   return true;
 }
 
+$.ajax({
+  type: "GET",
+  url: "/header.html",
+  success: function (data) {
+    $('header').html(data);
+  },
+});
+
+$.ajax({
+  type: "GET",
+  url: "/footer.html",
+  success: function (data) {
+    $('footer').html(data);
+  },
+});
+
 //cart array
 let carts = JSON.parse(localStorage.getItem("cartItems")) || {};
 

@@ -1221,3 +1221,10 @@ th:last-child {
   }
 }
 
+iframe,
+iframe html,
+iframe head,
+iframe body {
+  height: auto;
+}
+

@@ -1,4 +1,4 @@
 # E--lectronic-
-Electronic webiste
+Electronic website
 ________________
 Term-2 project
