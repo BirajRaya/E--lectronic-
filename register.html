@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up | Ecommerce Site</title>
+     
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!--Font Awesome - CDN -->
+    <script src="https://kit.fontawesome.com/2ae83b5e46.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+      <!--Nav bar-->
+    
+      <nav class="nav">
+  
+        <div class="container nav_container">
+          <a href="" class="nav_logo">E->lectronic</a>
+          <ul class="nav_list">
+            <li class="nav_item"><a href="index.html" class="nav_link">Home</a></li>
+            <li class="nav_item"><a href="#" class="nav_link">Products</a></li>
+            <li class="nav_item"><a href="#" class="nav_link">About</a></li>
+            <li class="nav_item"><a href="contact_us.html" class="nav_link">Contact</a></li>
+    
+    
+            <li class="nav_item signup" id="signupLink"><a href="login.html" class="nav_link">Signup </a></li>
+           
+            <div class="cart_div">
+            <a href="cart.html">
+                <img src="image/cart.png" alt="" class="nav_cart">
+            </a>
+            <div class="span_div">
+              <span class="cart_span">0</p>
+            </div>
+            </div>
+            <div class="user_auth" id="user_auth" onclick="logout()">
+              <img src="image/user_icon.png" alt="" class="nav_user"><i class="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+           
+    
+          </ul>
+        
+    
+        
+          </div>
+    
+        </div>
+        </div>
+      </nav>
+      <!--login page-->
+
+      <section class="section">
+        <div class="auth_container">
+          <div class="auth_img">
+            <img src="./image/auth.png" alt="" class="auth_image" />
+          </div>
+          <div class="auth_content">
+            <form action="" class="auth_form">
+              <h2 class="form_title">Create your account</h2>
+              <p class="auth_p">Enter your details below</p>
+              <div class="form_group">
+                <input type="text" placeholder="Enter your name" class="form_input name" />
+              </div>
+              <div class="form_group">
+                <input type="email" placeholder="Enter Email" class="form_input email" />
+              </div>
+              <div class="form_group form_pass">
+                <input type="password"
+                  placeholder=" Enter Password"
+                  class="form_input password" />
+              </div>
+              <div class="form_group ">
+                <button class="form_btn register" onclick="register()">
+                  <a href="#" class="form_link ">Register</a>
+                </button>
+              </div>
+              <div class="form_group">
+                <span
+                  >Already have an account?
+                  <a href="login.html" class="form_auth_link"
+                    >login</a
+                  ></span
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+    
+     <!---Footer-->
+     <div class="footer">
+      <div class="container">
+          <div class="mainDiv">
+
+              <div class="footer-div1">
+                  <h3 class="tag text"> E->lectronic</h3>
+                  <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas placeat exercitationem eaque quod quos sunt facilis minima magnam minus recusandae autem beatae quaerat excepturi quam accusamus, in assumenda, rem ab!</p>
+              </div>
+              <div class="footer-div3">
+                  <H3 class="text">Help & other Services</H3>
+                  <ul>
+                      <li><a href="ContactUs.html" class="text">Countact Us</a></li>
+                      <li><a href="" class="text">Return policy</a></li>
+                      <li><a href="FAQ.html" class="text">FAQ</a></li>
+
+                  </ul>
+
+              </div>
+              <div class="footer-div2">
+                  <H3 class="text">Keep In Touch</H3>
+                  <ul>
+                      <li>
+                          <a href="https://www.facebook.com/" class="text"><i class="fa fa-facebook-official"></i> Facebook</a></li>
+
+                      <li><a href="https://twitter.com/login" class="text"><i class="fa fa-twitter"></i> twitter</a></li>
+
+                      <li>
+                          <a href="https://www.instagram.com/accounts/login/" class="text"><i class="fa fa-instagram"></i> Instagram</a></li>
+                  </ul>
+
+              </div>
+          </div>
+
+      </div>
+      <hr class="hr">
+      <p class="copyright text"> &copy; Copyright 2024 - E->lectronic</p>
+
+
+
+     </div>
+         
+           
+  
+    <script src="script/user_authentication.js"></script>
+    <script src="script/main.js"></script>
+  
+  
+  </body>
+  </html>
